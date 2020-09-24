@@ -1,0 +1,57 @@
+{
+    "name": "faridbabayev/geoip",
+    "description": "This package provides an API for the ReallyFreeFeoip",
+    "keywords": [
+        "faridbabayev",
+        "geoip",
+        "ip",
+        "location"
+    ],
+    "minimum-stability": "dev",
+    "homepage": "https://github.com/faridbabayev/geoip",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Farid Babayev",
+            "email": "farid.b@code.edu.az",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "FaridBabayev\\Geoip\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FaridBabayev\\Geoip\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "FaridBabayev\\Geoip\\GeoipServiceProvider"
+            ],
+            "aliases": {
+                "Geoip": "FaridBabayev\\Geoip\\GeoipFacade"
+            }
+        }
+    }
+}
